@@ -11,12 +11,14 @@ class $modify(RemUXKeyboardDispatcher, CCKeyboardDispatcher) {
         if (down) {
             if (CCScene::get() == nullptr) return CCKeyboardDispatcher::dispatchKeyboardMSG(key, down, arr);
             auto tableView = SceneUtils::get()->getTableView();
-            if (key == KEY_Down) {
-                if (tableView != nullptr)
-                    tableView->scrollDown();
-            } if (key == KEY_Up) {
-                if (tableView != nullptr)
-                    tableView->scrollUp();
+            if (tableView != nullptr) {
+                if (key == KEY_Down) {
+                    if (tableView != nullptr)
+                        tableView->scrollDown();
+                } if (key == KEY_Up) {
+                    if (tableView != nullptr)
+                        tableView->scrollUp();
+                }
             }
         }
 
